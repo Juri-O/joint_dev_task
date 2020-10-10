@@ -5,6 +5,12 @@ print("#####q1#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+<?php
+$names = ["田中","佐藤","佐々木","高橋"];
+//配列に「斎藤」を追加
+array_push($names,"斎藤");
+print_r($names);
+ ?>
 
 echo PHP_EOL;
 
@@ -13,6 +19,13 @@ $array1 = ["dog", "cat", "fish"];
 $array2 = ["bird", "bat", "tiger"];
 
   # 以下に回答を記載
+<?php
+$array1 = ["dog","cat","fish"];
+$array2 = ["bird","bat","tiger"];
+//$arrayに結合した配列を代入
+$array = array_merge($array1,$array2);
+print_r($array);
+ ?>
 
 echo PHP_EOL;
 
@@ -20,6 +33,18 @@ print("#####q3#####".PHP_EOL);
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
 
   # 以下に回答を記載
+<?php
+$numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
+//回数カウント　$numbers_count
+$numbers_count = 0;
+//３のとき、カウントに１を追加する
+foreach ($numbers as $value) {
+  if ($value == 3) {
+    $numbers_count += 1;
+  }
+}
+echo $numbers_count;
+ ?>
 
 echo PHP_EOL;
 
@@ -27,6 +52,12 @@ print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
+<?php
+$sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
+//nullを除く
+$sportsname = array_filter($sports);
+print_r($sportsname);
+ ?>
 
 echo PHP_EOL;
 
@@ -35,6 +66,23 @@ $array1 = [];
 $array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
+<?php
+$array1 = [];
+//nullかどうか判別
+if (empty($array1)) {
+  echo "true";
+}else {
+  echo "false";
+}?>
+
+<?php
+$array2 = [1, 5, 8, 10];
+if (empty($array2)) {
+  echo "true";
+}else {
+  echo "false";
+}
+ ?>
 
 echo PHP_EOL;
 
@@ -42,6 +90,15 @@ print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
+<?php
+//配列の要素を１０倍するコールバック関数
+function valuecalc($n){
+  return($n * 10);
+}
+$numbers1 = [1, 2, 3, 4, 5];
+$numbers2 = array_map("valuecalc", $numbers1);
+print_r($numbers2);
+ ?>
 
 echo PHP_EOL;
 
@@ -49,6 +106,14 @@ print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
   # 以下に回答を記載
+<?php
+$array = ["1", "2", "3", "4", "5"];
+foreach ($array as $value) {
+  //文字列を整数型に変換
+  $value = (int)$value;
+}
+print_r($array);
+ ?>
 
 echo PHP_EOL;
 
@@ -56,6 +121,16 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php","ruby","python","javascript"];
 
   # 以下に回答を記載
+<?php
+function upper($n){
+  return(strtoupper($n));
+}
+$programming_languages = ["php","ruby","python","javascript"];
+$upper_case_programming_languages = array_map("upper",$programming_languages);
+print_r($programming_languages);
+echo PHP_EOL;
+print_r($upper_case_programming_languages);
+ ?>
 
   # 以下は変更しないで下さい
 print_r($programming_languages);
@@ -183,9 +258,9 @@ class Human
 
 class Zoo
 {
-    
+
   # コードを追加
-    
+
 }
 
 $zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
