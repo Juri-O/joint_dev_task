@@ -40,7 +40,7 @@ $numbers_count = 0;
 //３のとき、カウントに１を追加する
 foreach ($numbers as $value) {
   if ($value == 3) {
-    $numbers_count += 1;
+    $numbers_count++;
   }
 }
 echo $numbers_count;
@@ -108,9 +108,10 @@ $array = ["1", "2", "3", "4", "5"];
   # 以下に回答を記載
 <?php
 $array = ["1", "2", "3", "4", "5"];
-foreach ($array as $value) {
+foreach ($array as $val) {
   //文字列を整数型に変換
-  $value = (int)$value;
+  $val = (integer)$val;
+  var_dump(gettype($val));
 }
 print_r($array);
  ?>
@@ -122,6 +123,7 @@ $programming_languages = ["php","ruby","python","javascript"];
 
   # 以下に回答を記載
 <?php
+//文字列を大文字にする
 function upper($n){
   return(strtoupper($n));
 }
@@ -143,9 +145,7 @@ print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
-<?php
 
- ?>
 
 echo PHP_EOL;
 
@@ -153,6 +153,7 @@ print("#####q10#####".PHP_EOL);
 $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼"];
 
   # 以下に回答を記載
+
 
 echo PHP_EOL;
 
