@@ -156,11 +156,12 @@ $names = ["田中", "佐藤", "佐々木", "高橋"];
 <?php
 //Q9
 $names = ["田中", "佐藤", "佐々木", "高橋"];
+$names2 = array();
 foreach ($names as $key => $value) {
   $key++;
-  print_r("会員No.{$key} {$value}");
-  echo PHP_EOL;
+  array_push($names2,"会員No.{$key} {$value}");
 }
+print_r($names2);
 ?>
 
 echo PHP_EOL;
@@ -172,8 +173,8 @@ $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","
 <?php
 //Q10
 $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼"];
-foreach ($foods as $val) {
-  if(strstr($val,"うに")){
+foreach ($foods as $food) {
+  if(strstr($food,"うに")){
     echo "好物です";
     echo PHP_EOL;
   }else{
@@ -323,7 +324,6 @@ echo PHP_EOL;
 print("#####q17#####".PHP_EOL);
 class User
 {
-
   # コードを追加
 
 }
@@ -334,6 +334,7 @@ $user2 = new User("あじー",32,"男");
 $user1->info();
 print("-------------".PHP_EOL);
 $user2->info();
+
 
 echo PHP_EOL;
 
